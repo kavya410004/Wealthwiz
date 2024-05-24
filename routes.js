@@ -415,7 +415,7 @@ router.get("/recommend", async (req, res) => {
 router.post("/recommend", async (req,res) => {
   if(req.isAuthenticated()){
     try{
-      // const apiResponse = await axios.post("http://127.0.0.1:5000/recommend", req.body );
+      const apiResponse = await axios.post("http://127.0.0.1:5000/recommend", req.body );
       const result = await getBalAndExp(req.user.username);
       const Responses = [
         [
@@ -444,24 +444,20 @@ router.post("/recommend", async (req,res) => {
   
       ]
       let balance = result.balance;
-      let recommendationResult = [];
-      if(req.body.risk_tolerance === 'low'){
-        recommendationResult = Responses[0];
-      }else if(req.body.risk_tolerance === 'moderate'){
-        recommendationResult = Responses[1];
-      }
-      // let apiResult = JSON.stringify(apiResponse.data);
-      // apiResult = apiResult.filter(item => !isNaN(item.name) && !isNaN(item.symbol));
-      // apiResult = JSON.parse(apiResult);
-      // let recommendations = apiResult[0];
-      // console.log(apiResult);
-
-      // if (!Array.isArray(apiResult)) {
-      //   apiResult = []; // Set it as an empty array if it's not already an array
+      // let recommendationResult = [];
+      // if(req.body.risk_tolerance === 'low'){
+      //   recommendationResult = Responses[0];
+      // }else if(req.body.risk_tolerance === 'moderate'){
+      //   recommendationResult = Responses[1];
       // }
+      let apiResult = JSON.stringify(apiResponse.data);
+      apiResult = apiResult.filter(item => !isNaN(item.name) && !isNaN(item.symbol));
+      apiResult = JSON.parse(apiResult);
+      console.log(apiResult);
+
       res.render("recommendation.ejs",{
         "balance" : balance,
-        "recommendationResult" : recommendationResult
+        "recommendationResult" : apiResult
       });
     }catch(err){
       console.log("Error fetching result from recommendation system API :", err);

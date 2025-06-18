@@ -18,7 +18,7 @@ By analyzing transaction history and spending behavior, it delivers tailored ins
 
 ## 🎬 Demo Video
 
-Click to watch the full demo here:  
+Click below to watch the full demo:  
 
 [![Watch the demo](https://img.youtube.com/vi/VStU1GGdqZg/hqdefault.jpg)](https://youtu.be/VStU1GGdqZg)
 
@@ -89,7 +89,7 @@ Ref: transactions.category_id > categories.category_id -->
 
 ## 🛣️ Project Roadmap
 
-Here’s a high-level overview of what’s been completed and what’s coming next for **FinGenie**:
+Here’s a high-level overview of what’s been completed and what’s coming next for **Wealthwiz**:
 
 ### ✅ Completed
 - 🔐 User Authentication (Sign up, Login, Logout)
@@ -107,8 +107,6 @@ Here’s a high-level overview of what’s been completed and what’s coming ne
 ### 🔜 Upcoming
 - 🎯 Implement Personalized Investment Recommendations
 - 🏦 Add Support for Importing Bank Statements (CSV/Excel)
-- 📤 Export Reports (PDF/CSV)
-- 🔔 Notification System for Smart Suggestions & Alerts
 
 
 
